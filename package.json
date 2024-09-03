@@ -43,5 +43,8 @@
     "singleQuote": true,
     "tabWidth": 2,
     "trailingComma": "none"
+  },
+  "devDependencies": {
+    "code-inspector-plugin": "^0.16.1"
   }
 }

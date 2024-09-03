@@ -1,3 +1,5 @@
+const { codeInspectorPlugin } = require('code-inspector-plugin');
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
@@ -11,7 +13,11 @@ const nextConfig = {
         hostname: '*.public.blob.vercel-storage.com'
       }
     ]
-  }
+  },
+  webpack: (config, { dev, isServer }) => {
+    config.plugins.push(codeInspectorPlugin({ bundler: 'webpack' }));
+    return config;
+  },
 };
 
 module.exports = nextConfig;
